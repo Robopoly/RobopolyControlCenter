@@ -1,0 +1,53 @@
+<span class="title">Configuration</span>
+<div class="panel">
+	<p>Dynamic exposure continuously corrects the exposure time to achieve the highest dynamical range.</p>
+	<label for="exposureTime">Exposure time</label>
+	<input id="exposureTime" type="range" min="10" max="1000" value="100" step="1" /> <span>100</span>&mu;s
+	<br />
+	<label for="dynamicExposure">Dynamic exposure</label>
+	<input id="dynamicExposure" type="checkbox" />
+</div>
+
+<span class="title">Output</span>
+<div class="panel">
+	<div id="plotContainer">
+		<div id="plot"></div>
+		<div id="legendContainer"></div>
+	</div>
+	<br />
+	<label for="legend">Legend</label>
+	<input id="legend" type="checkbox" checked="true" />
+	<br />
+	<label for="minimum">Minimum</label>
+	<span id="minimum">0</span>
+	<br />
+	<label for="maximum">Maximum</label>
+	<span id="maximum">255</span>
+	<br />
+	<label for="difference">Difference</label>
+	<span id="difference">255</span>
+	<br />
+	<label for="average">Average</label>
+	<span id="average">127</span>
+	<br />
+	<label for="peaks">Peaks</label>
+	<span id="peaks">51</span>
+</div>
+
+<span class="title">Peak detection</span>
+<div class="panel">
+	<p>A peak is detected when the intensity value crosses the threshold, you may choose to select the signal average as threshold.</p>
+	<label for="threshold">Peak threshold</label>
+	<input id="threshold" type="range" min="1" max="254" value="191" step="1" /> <span>191</span>
+	<br />
+	<label for="useAverageThreshold">Use average</label>
+	<input id="useAverageThreshold" type="checkbox" />
+</div>
+
+<span class="title">Light follower</span>
+<div class="panel">
+	<label for="maxSpeed">Maximum speed</label>
+	<input id="maxSpeed" type="range" min="0" max="100" value="80" step="1" /> <span>80</span>
+</div>
+
+<input id="toggle" type="button" value="Start" />

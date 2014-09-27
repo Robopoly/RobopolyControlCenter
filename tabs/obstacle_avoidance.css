@@ -1,0 +1,42 @@
+#content .wide
+{
+	width: 15em;
+}
+
+#irSensorOutput
+{
+	width: 100%;
+}
+
+#irSensorOutput th,
+#irSensorOutput td
+{
+	width: 12.5%;
+	text-align: center;
+}
+
+#irSensorOutput div
+{
+	height: 100px;
+	border: solid 1px #ccc;
+}
+
+#irSensorOutput div#sensor-1
+{
+	background: #fff;
+}
+
+#irSensorOutput div#sensor-2
+{
+	background: #999;
+}
+
+#irSensorOutput div#sensor-3
+{
+	background: #666;
+}
+
+#irSensorOutput div#sensor-4
+{
+	background: #000;
+}

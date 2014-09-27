@@ -1,0 +1,35 @@
+<span class="title">Configuration</span>
+<div class="panel">
+	<label for="maxSpeed">Maximum speed</label>
+	<input id="maxSpeed" type="range" min="0" max="100" value="50" step="1" /> <span>50</span>%
+	<br />
+	<label for="controlArchitecture">Control architecture</label>
+	<select id="controlArchitecture" class="wide">
+		<option value="0">Rule-Based</option>
+		<option value="1">Braitenberg</option>
+	</select>
+</div>
+
+<span class="title">Output</span>
+<div class="panel">
+	<table id="irSensorOutput">
+		<tr>
+			<td colspan="2"><div id="sensor-1"></div></td>
+			<td colspan="2"><div id="sensor-2"></div></td>
+			<td colspan="2"><div id="sensor-3"></div></td>
+			<td colspan="2"><div id="sensor-4"></div></td>
+		</tr>
+		<tr>
+			<th>A2</th>
+			<td id="sensor-1-value">0</td>
+			<th>A3</th>
+			<td id="sensor-2-value">0</td>
+			<th>A4</th>
+			<td id="sensor-3-value">0</td>
+			<th>A5</th>
+			<td id="sensor-4-value">0</td>
+		</tr>
+	</table>
+</div>
+
+<input id="toggle" type="button" value="Start" />

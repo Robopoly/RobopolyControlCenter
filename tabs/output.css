@@ -1,0 +1,32 @@
+table.output
+{
+	width: 700px;
+	margin: 0 auto;
+}
+
+table.spi
+{
+	width: 300px;
+	margin: 0 auto;
+}
+
+table.output th,
+table.spi th
+{
+	width: 7%;
+	text-align: left;
+	line-height: 20px;
+}
+
+table.output td,
+table.spi td
+{
+	width: 7%;
+	text-align: center;
+	line-height: 20px;
+}
+
+table.output .image
+{
+	text-align: center;
+}

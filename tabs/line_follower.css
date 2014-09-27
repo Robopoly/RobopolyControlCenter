@@ -1,0 +1,22 @@
+#content #toggle
+{
+  background: #0f0;
+}
+
+table.sensors
+{
+	width: 150px;
+}
+
+table.sensors th
+{
+	width: 20px;
+	text-align: left;
+	line-height: 20px;
+}
+
+table.sensors td
+{
+	text-align: center;
+	line-height: 20px;
+}

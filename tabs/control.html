@@ -1,0 +1,46 @@
+<p>Use the buttons on the interface or WASD keys on the keyboard to move the mobile platform.</p>
+
+<span class="title">Control</span>
+<div class="panel">
+  <div id="control">
+    <input type="button" id="dir_w" value="W" /><br /><input type="button" id="dir_a" value="A" /><input type="button" id="dir_s" value="S" /><input type="button" id="dir_d" value="D" />
+  </div>
+  <label for="maxSpeed">Maximum speed</label>
+  <input id="maxSpeed" type="range" min="0" max="100" value="80" step="1" /> <span>80</span>%
+  <br />
+  <label for="profile">Profile</label>
+  <select id="profile">
+    <option value="0">Square</option>
+    <option value="1">Trapezoid</option>
+  </select>
+  <br />
+  <label for="acceleration">Acceleration</label>
+  <input id="acceleration" type="range" min="1" max="100" value="8" step="1" /> <span>80</span>%/s
+  <br />
+</div>
+
+<span class="title">Tone</span>
+<div class="panel">
+  <label for="frequency">Frequency</label>
+  <input id="frequency" type="range" min="100" max="2000" value="440" step="10" /> <span>440</span>Hz
+  <br />
+  <label for="duration">Duration</label>
+  <input id="duration" type="range" min="50" max="1000" value="500" step="10" /> <span>500</span>ms
+  <br />
+  <input id="play" type="button" value="Play" />
+</div>
+
+<span class="title">Servomotors</span>
+<div class="panel">
+  <label for="servo-1">Servo 1</label>
+  <input id="servo-1" type="range" min="0" max="180" value="90" step="1" /> <span>90</span>&deg;
+  <br />
+  <label for="servo-2">Servo 2</label>
+  <input id="servo-2" type="range" min="0" max="180" value="90" step="1" /> <span>90</span>&deg;
+</div>
+
+<span class="title">Other</span>
+<div class="panel">
+  <label for="led">Toggle LED</label>
+  <input id="led" type="checkbox" />
+</div>

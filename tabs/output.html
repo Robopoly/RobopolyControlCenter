@@ -1,0 +1,191 @@
+<span class="title">Configuration</span>
+<div class="panel">
+	<label for="updatePeriod">Period</label>
+	<input id="updatePeriod" type="range" min="100" max="1000" value="500" step="100" /> <span>500</span>ms
+	<br />
+	<label for="shield">Shield overlay</label>
+	<input id="shield" type="checkbox" />
+</div>
+
+<span class="title">Output</span>
+<div class="panel">
+	<label for="temperature">Temperature</label>
+	<span id="temperature">0</span>&deg;C
+	<br />
+	<table class="output">
+		<tr>
+			<th></th>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td class="image" rowspan="15"><img id="image" src="./images/prismino.png" width="300" /></td>
+			<th>Pin</th>
+			<td>Digital</td>
+			<td>Analog</td>
+			<td>Mode</td>
+		</tr>
+			<th></th>
+			<td></td>
+			<td></td>
+			<td></td>
+			<th>13</th>
+			<td id="d13">0</td>
+			<td>-</td>
+			<td id="m13">Input</td>
+		</tr>
+		</tr>
+			<th></th>
+			<td></td>
+			<td></td>
+			<td></td>
+			<th>12/A11</th>
+			<td id="d12">0</td>
+			<td id="a11">0</td>
+			<td id="m12">Input</td>
+		</tr>
+		</tr>
+			<th></th>
+			<td></td>
+			<td></td>
+			<td></td>
+			<th>11</th>
+			<td id="d11">0</td>
+			<td>-</td>
+			<td id="m11">Input</td>
+		</tr>
+		</tr>
+			<th></th>
+			<td></td>
+			<td></td>
+			<td></td>
+			<th>10/A10</th>
+			<td id="d10">0</td>
+			<td id="a10">0</td>
+			<td id="m10">Input</td>
+		</tr>
+		</tr>
+			<th></th>
+			<td></td>
+			<td></td>
+			<td></td>
+			<th>9/A9</th>
+			<td id="d9">0</td>
+			<td id="a9">0</td>
+			<td id="m9">Input</td>
+		</tr>
+		</tr>
+			<th></th>
+			<td></td>
+			<td></td>
+			<td></td>
+			<th>8/A8</th>
+			<td id="d8">0</td>
+			<td id="a8">0</td>
+			<td id="m8">Input</td>
+		</tr>
+		</tr>
+			<th></th>
+			<td></td>
+			<td></td>
+			<td></td>
+			<th>7</th>
+			<td id="d7">0</td>
+			<td>-</td>
+			<td id="m7">Input</td>
+		</tr>
+		</tr>
+			<th>Pin</th>
+			<td>Digital</td>
+			<td>Analog</td>
+			<td>Mode</td>
+			<th>6/A7</th>
+			<td id="d6">0</td>
+			<td id="a7">0</td>
+			<td id="m6">Input</td>
+		</tr>
+		</tr>
+			<th>A0</th>
+			<td id="da0">0</td>
+			<td id="a0">0</td>
+			<td id="ma0">Input</td>
+			<th>5</th>
+			<td id="d5">0</td>
+			<td>-</td>
+			<td id="m5">Input</td>
+		</tr>
+		</tr>
+			<th>A1</th>
+			<td id="da1">0</td>
+			<td id="a1">0</td>
+			<td id="ma1">Input</td>
+			<th>4/A6</th>
+			<td id="d4">0</td>
+			<td id="a6">0</td>
+			<td id="m4">Input</td>
+		</tr>
+		</tr>
+			<th>A2</th>
+			<td id="da2">0</td>
+			<td id="a2">0</td>
+			<td id="ma2">Input</td>
+			<th>3</th>
+			<td id="d3">0</td>
+			<td>-</td>
+			<td id="m3">Input</td>
+		</tr>
+		</tr>
+			<th>A3</th>
+			<td id="da3">0</td>
+			<td id="a3">0</td>
+			<td id="ma3">Input</td>
+			<th>2</th>
+			<td id="d2">0</td>
+			<td>-</td>
+			<td id="m2">Input</td>
+		</tr>
+		</tr>
+			<th>A4</th>
+			<td id="da4">0</td>
+			<td id="a4">0</td>
+			<td id="ma4">Input</td>
+			<th>1</th>
+			<td id="d1">0</td>
+			<td>-</td>
+			<td id="m1">Input</td>
+		</tr>
+		</tr>
+			<th>A5</th>
+			<td id="da5">0</td>
+			<td id="a5">0</td>
+			<td id="ma5">Input</td>
+			<th>0</th>
+			<td id="d0">0</td>
+			<td>-</td>
+			<td id="m0">Input</td>
+		</tr>
+	</table>
+	<br />
+	<table class="spi">
+		<tr>
+			<th>Pin</th>
+			<td>Digital</td>
+			<td>Mode</td>
+			<td rowspan="4"><img src="./images/spi.png" width="140" height="80" /></td>
+		</tr>
+		</tr>
+			<th><span style="color: #f00">SCK</span></th>
+			<td id="sck">0</td>
+			<td id="msck">Input</td>
+		</tr>
+		</tr>
+			<th><span style="color: #00f">MISO</span></th>
+			<td id="miso">0</td>
+			<td id="mmiso">Input</td>
+		</tr>
+		</tr>
+			<th><span style="color: #0cc">MOSI</span></th>
+			<td id="mosi">0</td>
+			<td id="mmosi">Input</td>
+		</tr>
+	</table>
+</div>

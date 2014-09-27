@@ -1,0 +1,26 @@
+{
+	"manifest_version": 2,
+	"name": "Robopoly Control Center",
+	"version": "0.1",
+	"description": "Show output of sensors and ports on a graphical user interface from the PRismino.",
+	"author": "Karl Kangur",
+	"icons":
+	{
+		"128": "images/icon_128.png"
+	},
+	"minimum_chrome_version": "33",
+	"app":
+	{
+		"background":
+		{
+			"scripts": ["eventPage.js"],
+			"persistent": false
+		}
+	},
+	"permissions":
+	[
+		"serial",
+		"storage",
+		"http://robopoly.epfl.ch/*"
+	]
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript" src="./js/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="./js/jquery.flot.js"></script>
+	<script type="text/javascript" src="./js/serial.js"></script>
+
+	<script type="text/javascript" src="./main.js"></script>
+	<script type="text/javascript" src="./tabs/home.js"></script>
+	<script type="text/javascript" src="./tabs/line_follower.js"></script>
+	<script type="text/javascript" src="./tabs/obstacle_avoidance.js"></script>
+	<script type="text/javascript" src="./tabs/linear_camera.js"></script>
+	<script type="text/javascript" src="./tabs/control.js"></script>
+	<script type="text/javascript" src="./tabs/output.js"></script>
+
+	<link rel="stylesheet" href="./main.css">
+	<link rel="stylesheet" href="./tabs/home.css">
+	<link rel="stylesheet" href="./tabs/line_follower.css">
+	<link rel="stylesheet" href="./tabs/obstacle_avoidance.css">
+	<link rel="stylesheet" href="./tabs/linear_camera.css">
+	<link rel="stylesheet" href="./tabs/control.css">
+	<link rel="stylesheet" href="./tabs/output.css">
+</head>
+<body>
+
+<div id="logo"><a href="http://robopoly.epfl.ch" target="_blank"><img src="./images/robopoly.png" alt="Robopoly" title="Go to Robopoly website" /></a></div>
+
+<div id="connect">
+	<select id="port"></select>
+	<select id="bitrate">
+		<option>115200</option>
+		<option>57600</option>
+		<option>38400</option>
+		<option>28800</option>
+		<option>19200</option>
+		<option>14400</option>
+		<option>9600</option>
+		<option>4800</option>
+		<option>2400</option>
+		<!--<option>1200</option>-->
+	</select>
+	<input id="buttonRefresh" type="button" value="Refresh" />
+	<input id="buttonConnect" type="button" value="Connect" />
+</div>
+
+<ul id="tabs">
+	<li class="home"><a href="#" class="active"><img src="./images/home.png" /></a></li>
+	<li class="line_follower"><a href="#">Line follower</a></li>
+	<li class="obstacle_avoidance"><a href="#">Obstacle avoidance</a></li>
+	<li class="linear_camera"><a href="#">Linear camera</a></li>
+	<!--<li class="radar"><a href="#">Radar</a></li>-->
+	<li class="control"><a href="#">Control</a></li>
+	<!--<li class="piano"><a href="#">Piano</a></li>-->
+	<li class="output"><a href="#">Output</a></li>
+</ul>
+
+<div id="content"></div>
+
+</body>
+</html>

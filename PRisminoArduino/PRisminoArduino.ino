@@ -98,6 +98,8 @@ void loop()
     case 'f':
       // Dumping A0 and A1 in diginal and analog
       // Format: v[A0 digital]\n[A0 analog]\n[A1 digital]\n[A1 analog]\n...
+      pinMode(LED, OUTPUT);
+      digitalWrite(LED, HIGH);
       Comm.print("f");
       Comm.print(digitalRead(A0));
       Comm.print("\n");
@@ -107,10 +109,13 @@ void loop()
       Comm.print("\n");
       Comm.print(analogRead(A1));
       Comm.print("\n");
+      digitalWrite(LED, LOW);
       break;
     case 'o':
       // Dumping A2..A5 in analog
       // Format: o[A2]\n[A3]\n[A4]\n[A5]\n
+      pinMode(LED, OUTPUT);
+      digitalWrite(LED, HIGH);
       Comm.print("o");
       Comm.print(analogRead(A2));
       Comm.print("\n");
@@ -120,6 +125,7 @@ void loop()
       Comm.print("\n");
       Comm.print(analogRead(A5));
       Comm.print("\n");
+      digitalWrite(LED, LOW);
       break;
     case 'e':
       // Change exposure time for the linear camera

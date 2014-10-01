@@ -135,12 +135,17 @@ TABS.obstacle_avoidance.avoid = function()
 		}
 		else if(this.data[this.sensors.LEFT] < 512)
 		{
-			speedLeft = maxSpeed;
-			speedRight = 0;
+			speedLeft = 0;
+			speedRight = -maxSpeed;
 		}
 		else if(this.data[this.sensors.RIGHT] < 512)
 		{
-			speedLeft = 0;
+			speedLeft = -maxSpeed;
+			speedRight = 0;
+		}
+		else
+		{
+			speedLeft = maxSpeed;
 			speedRight = maxSpeed;
 		}
 	}

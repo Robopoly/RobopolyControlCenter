@@ -1,13 +1,12 @@
 #include <prismino.h>
 #include <Servo.h>
-#include <SoftwareSerial.h>
-
-SoftwareSerial Bluetooth(SCK, MISO); // RX, TX
 
 #define VERSION_MAJOR 0
-#define VERSION_MINOR 1
+#define VERSION_MINOR 2
 
-#define Comm Serial
+// Communication method, uncomment only one
+#define Comm Serial // for USB
+//#define Comm Serial1 // for Bluetooth
 
 char buffer[16];
 Servo servo1, servo2;

@@ -1,30 +1,29 @@
 #include <prismino.h>
+#include <LinearCamera.h>
 #include <Servo.h>
 
 #define VERSION_MAJOR 0
-#define VERSION_MINOR 2
+#define VERSION_MINOR 3
 
 // Communication method, uncomment only one
 #define Comm Serial // for USB
 //#define Comm Serial1 // for Bluetooth
 
+// Instance of the camera, it works over I2C and the default address is "5"
+LinearCamera lc = LinearCamera(5);
+uint8_t *lcDataPtr;
+
 char buffer[16];
 Servo servo1, servo2;
 uint16_t frequency, duration, value;
 uint8_t i, pin;
-float dataPoint;
-
-uint8_t sineOffset = 0;
 
 // Default exposure time in microseconds
 uint16_t exposureTime = 100;
 
 void setup()
-{ 
+{
   Comm.begin(9600);
-  
-  // Guaranteed to be a random seed
-  randomSeed(4);
 }
 
 void loop()
@@ -40,6 +39,11 @@ void loop()
       servo2.detach();
       for(i = 0; i < 24; i++)
       {
+        // Do not reset configuration of pins 0 and 1 when Bluetooth is used
+        if(Comm == Serial1 && i < 2)
+        {
+          continue;
+        }
         pinMode(i, INPUT);
         // Also remove the pull-up
         digitalWrite(i, LOW);
@@ -47,26 +51,32 @@ void loop()
       break;
     case 's':
       // Set motor speed
+      while(Comm.available() < 2);
       setSpeed(Comm.read(), Comm.read());
       break;
     case 't':
+      while(Comm.available() < 4);
       frequency = (Comm.read() << 8) | Comm.read();
       duration = (Comm.read() << 8) | Comm.read();
       play(frequency, duration);
       break;
     case '1':
       servo1.attach(S1);
+      while(!Comm.available());
       servo1.write(Comm.read());
       break;
     case '2':
       servo2.attach(S2);
+      while(!Comm.available());
       servo2.write(Comm.read());
       break;
     case 'l':
       pinMode(LED, OUTPUT);
+      while(!Comm.available());
       digitalWrite(LED, Comm.read());
       break;
     case 'm':
+      while(Comm.available() < 2);
       pinMode(Comm.read(), Comm.read());
       break;
     case 'g':
@@ -128,43 +138,26 @@ void loop()
       break;
     case 'e':
       // Change exposure time for the linear camera
+      while(Comm.available() < 2);
       exposureTime = (Comm.read() << 8) | Comm.read();
+      lc.setExpTime(exposureTime);
       break;
     case 'c':
+      // Configure the I2C lines
+      pinMode(SDA, INPUT); // pin 2
+      pinMode(SCL, INPUT); // pin 3
+      digitalWrite(SDA, HIGH);
+      digitalWrite(SCL, HIGH);
+      // Take a picture and return the pointer to the data address' first value
+      lcDataPtr = lc.getPixels();
+      
       // Linear camera output
       // Format: c[value]\n[value]\n[value]\n[value]\n...
       Comm.print("c");
-      for(i = 0; i < 102; i++)
+      // The linear camera is mounted upside down
+      for(i = LinearCamera::PIXELS; i > 0; i--)
       {
-        dataPoint = exposureTime * sin(3.14159 * (i + sineOffset) / 40) + 128;
-        if(dataPoint > 0xff)
-        {
-          Comm.print(0xff);
-        }
-        else if(dataPoint < 0)
-        {
-          Comm.print(0);
-        }
-        else
-        {
-          Comm.print(dataPoint);
-        }
-        Comm.print("\n");
-      }
-      sineOffset++;
-      if(sineOffset == 80)
-      {
-        sineOffset = 0;
-      }
-      break;
-    case 'u':
-      // Ultrasound radar
-      for(i = 0; i < 180; i++)
-      {
-        Comm.print("u");
-        Comm.print(i);
-        Comm.print("\n");
-        Comm.print(i);
+        Comm.print(*(lcDataPtr + i));
         Comm.print("\n");
       }
       break;

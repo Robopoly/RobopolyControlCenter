@@ -52,6 +52,12 @@ Downloading the source code makes it very easy to modifiy the application and ad
 
 # Version log
 
+## 0.3 (2014-11-15)
+
+* Added code for linear camera
+
+* Fixed problems with Bluetooth communication
+
 ## 0.2 (2014-10-27)
 
 * Made it easier to select between USB or Bluetooth communication in the PRismino sketch

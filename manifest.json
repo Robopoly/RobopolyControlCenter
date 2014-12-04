@@ -1,7 +1,7 @@
 {
 	"manifest_version": 2,
 	"name": "Robopoly Control Center",
-	"version": "0.1",
+	"version": "0.4",
 	"description": "Show output of sensors and ports on a graphical user interface from the PRismino.",
 	"author": "Karl Kangur",
 	"icons":

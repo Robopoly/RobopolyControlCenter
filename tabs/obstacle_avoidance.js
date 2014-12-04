@@ -28,17 +28,17 @@ TABS.obstacle_avoidance.initialize = function(serialDevice)
 	this.braitenberg = {
 		wheelLeft:
 		{
-			left: 0,
-			centerLeft: -10,
-			centerRight: 100,
-			right: 50
+			left: -100,
+			centerLeft: 0,
+			centerRight: 50,
+			right: 100
 		},
 		wheelRight:
 		{
-			left: 50,
-			centerLeft: 100,
-			centerRight: -10,
-			right: 0
+			left: 100,
+			centerLeft: 50,
+			centerRight: 0,
+			right: -100
 		}
 	}
 
@@ -122,23 +122,23 @@ TABS.obstacle_avoidance.avoid = function()
 
 	if($("#controlArchitecture").val() == this.controlArchitectures.RULEBASED)
 	{
-		// First check the center sensors and the obstacle is immediately in front
-		if(this.data[this.sensors.CENTERLEFT] < 512)
+		// First check the side sensors and the front ones
+		if(this.data[this.sensors.LEFT] < 800)
 		{
 			speedLeft = maxSpeed;
 			speedRight = -maxSpeed;
 		}
-		else if(this.data[this.sensors.CENTERRIGHT] < 512)
+		else if(this.data[this.sensors.RIGHT] < 800)
 		{
 			speedLeft = -maxSpeed;
 			speedRight = maxSpeed;
 		}
-		else if(this.data[this.sensors.LEFT] < 512)
+		else if(this.data[this.sensors.CENTERLEFT] < 800)
 		{
 			speedLeft = 0;
 			speedRight = -maxSpeed;
 		}
-		else if(this.data[this.sensors.RIGHT] < 512)
+		else if(this.data[this.sensors.CENTERRIGHT] < 800)
 		{
 			speedLeft = -maxSpeed;
 			speedRight = 0;

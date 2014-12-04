@@ -9,6 +9,9 @@
 #define Comm Serial // for USB
 //#define Comm Serial1 // for Bluetooth
 
+// Speed at which to communicate, usually 9600
+#define BAUDRATE 9600
+
 // Instance of the camera, it works over I2C and the default address is "5"
 LinearCamera lc = LinearCamera(5);
 uint8_t *lcDataPtr;
@@ -23,7 +26,7 @@ uint16_t exposureTime = 100;
 
 void setup()
 {
-  Comm.begin(9600);
+  Comm.begin(BAUDRATE);
 }
 
 void loop()

@@ -52,6 +52,10 @@ Downloading the source code makes it very easy to modifiy the application and ad
 
 # Version log
 
+## 0.4 (2014-12-04)
+
+* Tuned some control constants for the rule-based obstace avoidance.
+
 ## 0.3 (2014-11-15)
 
 * Added code for linear camera
